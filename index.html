@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation</title>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/8c5eb01a76.js" crossorigin="anonymous"></script>
+    <!-- daisy ui + tailwind css -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .font-manrope {
+            font-family: "Manrope", serif;
+        }
+
+        /* To remove the scrollbar on large screens */
+        body {
+            overflow-x: hidden;
+        }
+           /* Additional styling for the fixed navbar */
+           .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+          
+           
+            z-index: 1; 
+        }
+
+        
+
+        /* Center the carousel images for small and medium screens */
+        .carousel img {
+            object-fit: cover;
+        }
+
+        /* Make sure the carousel images are centered on medium and smaller screens */
+        @media (max-width: 1024px) {
+            .carousel img {
+                width: 100%;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-manrope">
+    <header class="w-full pt-20">
+        <nav>
+            <div class="navbar px-4 bg-base-100 flex justify-between items-center bg-[#1f2937]">
+                <div class=" flex items-center">
+                    <img src="./images/logo.png" class="w-20">
+                    <p class="text-2xl font-bold mt-5 text-white">Blood Bank</p>
+                </div>
+
+                <div class="hidden lg:flex ">
+                    <ul class="menu menu-horizontal">
+                        <li><a class="text-gray-600 ">Home</a></li>
+                        <li><a href="index.html" class="text-gray-600">About Us</a></li>
+                        <li><a class="text-gray-600">Donor</a></li>
+                        <li><a href="contact.html" class="text-gray-600">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="w-56 ">
+                    <div class="dropdown">
+                        <label tabindex="0" class="btn btn-ghost pr-10">
+                            <i class="fas fa-user text-white"></i>
+                        </label>
+                        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box w-32 shadow-lg">
+                            <li><a href="#">Login</a></li>
+                            <li><a href="#">Register</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            <li><a class="text-gray-600 lg:text-gray-300">Home</a></li>
+                            <li><a class="text-gray-600 lg:text-gray-300">About Us</a></li>
+                            <li><a class="text-gray-600 lg:text-gray-300">Donor</a></li>
+                            <li><a class="text-gray-600 lg:text-gray-300">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- banner -->
+        <section class="bg-black">
+            <div class="carousel w-full border-3 border-red-700">
+                <div id="slide1" class="carousel-item relative w-full">
+                    <div class="flex flex-col lg:flex-row justify-between gap-30 lg:px-20">
+                        <div class="flex flex-col justify-center p-10 space-y-3 mt-10 md:mt-5 lg:mt-0">
+                            <h2 class="text-white font-bold text-[35px] lg:text-[60px]">Save a Life.<br> Donate Blood</h2>
+                            <p class="text-lg">One pint of blood can save a life</p>
+                            <div class="rounded ">
+                                <button class="btn bg-red-700 text-white border border-none">Donate</button>
+                            </div>
+                        </div>
+                        <img src="./images/banner-2-removebg-preview.png" class="w-full lg:w-1/2 pr-20 mb-10" />
+                    </div>
+                    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                        <a href="#slide4" class="btn btn-circle">❮</a>
+                        <a href="#slide2" class="btn btn-circle">❯</a>
+                    </div>
+                </div>
+
+                <div id="slide2" class="carousel-item relative w-full">
+                    <div class="flex flex-col lg:flex-row justify-between gap-30 lg:px-20">
+                        <div class="flex flex-col justify-center p-10 w-full lg:w-1/2 space-y-3 mt-10 md:mt-5 lg:mt-0">
+                            <h2 class="text-white font-bold text-[35px] lg:text-[40px]">Your blood donation matters. Give Today!</h2>
+                            <p class="text-lg">All types of blood are needed to help patients</p>
+                            <div class="rounded">
+                                <button class="btn bg-red-700 text-white border border-none">Donate</button>
+                            </div>
+                        </div>
+                        <img src="./images/banner-4-removebg-preview.png" class="w-full lg:w-1/2 pr-20 mb-10" />
+                    </div>
+                    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                        <a href="#slide1" class="btn btn-circle">❮</a>
+                        <a href="#slide3" class="btn btn-circle">❯</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <!-- end -->
+
+    <main class="mt-12">
+      <section class="">
+        <!-- text section -->
+        <div class="flex flex-col justify-center items-center space-y-4">
+            <h4 class="text-blue-400 ">GET INVOLVED</h4>
+            <p class="text-5xl font-extrabold">Ways to help</p>
+            <hr class="w-24 border-1 border-red-600">
+
+        </div>
+        <!-- bottom -->
+         <div class="  w-11/12 lg:max-w-screen-xl mx-auto  mt-16">
+           <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full  mx-auto">
+            <div class="card bg-base-100 image-full  shadow-xl  ">
+                <figure>
+                  <img
+                    src="./images/waystohelp2.jpg"
+                    alt="" />
+                </figure>
+                <div class="card-body  relative">
+                 <div class="absolute bottom-8 space-y-4">
+                    <h2 class="card-title font-bold text-white">Donate Blood</h2>
+                    <p class="">Donate blood today. Help save lives</p>
+                    <div class="card-actions ">
+                      <button class="btn bg-[#ee3d32] border-none text-white">Donate Now</button>
+                    </div>
+                 </div>
+                </div>
+              </div>
+              <!-- card-2 -->
+              <div class="card bg-base-100 image-full w-full  mx-auto  shadow-xl">
+                <figure>
+                  <img
+                    src="./images/waystohelp2.jpg"
+                    alt="" />
+                </figure>
+                <div class="card-body relative">
+                  <div class="absolute bottom-8 space-y-3">
+                    <h2 class="card-title font-bold">Volunteer Team</h2>
+                  <p>We are always looking for your help.</p>
+                  <div class="card-actions ">
+                    <button class="btn bg-[#ee3d32] border-none text-white">Become a volunteer</button>
+                  </div>
+                  </div>
+                </div>
+              </div>
+           </div>
+         </div>
+         <!-- end grid -->
+      
+      </section>
+      <!-- end -->
+
+      <!-- about us -->
+      <section id="about" class="bg-gray-100 py-16">
+        <div class="max-w-screen-xl mx-auto px-6 lg:px-8">
+            <!-- Section Title -->
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-red-700 mb-4">About Us</h2>
+                <p class="text-lg text-gray-600">Dedicated to Saving Lives Through Blood Donation</p>
+            </div>
+    
+            <!-- About Content -->
+            <div class="flex flex-col lg:flex-row items-center gap-10">
+                <!-- Image -->
+                <div class="w-full lg:w-1/2">
+                    <img src="./images/waystohelp.jpeg" alt="Blood donation" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+    
+                <!-- Text Content -->
+                <div class="w-full lg:w-1/2 space-y-6">
+                    <h3 class="text-3xl font-bold text-gray-800">Our Mission</h3>
+                    <p class="text-gray-700">
+                        Our mission is to support patients in need by connecting blood donors with those who need life-saving blood. Every day, our community of dedicated volunteers and medical staff works tirelessly to provide safe, accessible blood for hospitals and patients.
+                    </p>
+                    <h3 class="text-3xl font-bold text-gray-800">Why Donate Blood?</h3>
+                    <p class="text-gray-700">
+                        Blood donation is a selfless act that directly impacts lives. From emergency situations to chronic conditions, the demand for blood is constant. Just one pint of blood can save up to three lives, making every donation incredibly valuable.
+                    </p>
+                    <div>
+                        <button class="btn bg-red-700 text-white border-none px-6 py-3 rounded-full shadow-md hover:bg-red-800">Donate Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    </main>
+
+    <footer class="bg-[#1f2937] text-neutral-content p-16">
+        <div class="max-w-screen-xl mx-auto flex flex-wrap justify-between gap-8">
+          <!-- Company Section -->
+          <nav class="flex flex-col space-y-2">
+            <h6 class="footer-title font-bold text-white">Company</h6>
+            <a href="about.html" class="link link-hover">About</a>
+            <a href="#" class="link link-hover">Careers</a>
+            <a href="#" class="link link-hover">Brand Center</a>
+            <a href="#" class="link link-hover">Blog</a>
+          </nav>
+      
+          <!-- Help Center Section -->
+          <nav class="flex flex-col space-y-2">
+            <h6 class="footer-title font-bold text-white">Help Center</h6>
+            <a href="about.html" class="link link-hover">Contact Us</a>
+            <a href="#" class="link link-hover">Facebook</a>
+            <a href="#" class="link link-hover">Discord</a>
+            <a href="#" class="link link-hover">Instagram</a>
+          </nav>
+      
+          <!-- Legal Section -->
+          <nav class="flex flex-col space-y-2">
+            <h6 class="footer-title font-bold text-white">Legal</h6>
+            <a href="#" class="link link-hover">Terms of Use</a>
+            <a href="#" class="link link-hover">Privacy Policy</a>
+            <a href="#" class="link link-hover">Cookie Policy</a>
+          </nav>
+        </div>
+      
+        <!-- Divider Line -->
+        <div class="border-t border-gray-600 my-8"></div>
+      
+        <!-- Copyright Section with Different Background -->
+        <!-- <div class=" text-center py-4">
+          <p class="text-gray-400">
+            © 2024 Blood Bank -  Design. All Rights Reserved.
+          </p>
+        </div> -->
+        <div class="flex justify-between items-center  py-4 px-6">
+            <!-- Left Side: Text -->
+            <p class="text-gray-400">
+              © 2024 Blood Bank - Design. All Rights Reserved.
+            </p>
+          
+            <!-- Right Side: Social Media Icons -->
+            <div class=" space-x-4">
+              <a href="#" target="_blank" aria-label="Facebook" class="text-gray-400 hover:text-blue-500">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" target="_blank" aria-label="Instagram" class="text-gray-400 hover:text-pink-500">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" target="_blank" aria-label="Discord" class="text-gray-400 hover:text-indigo-500">
+                <i class="fab fa-discord"></i>
+              </a>
+            </div>
+          </div>
+          
+      </footer>
+      
+      
+          
+</body>
+
+</html>
+
+
+

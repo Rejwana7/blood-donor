@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation</title>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/8c5eb01a76.js" crossorigin="anonymous"></script>
+    <!-- daisy ui + tailwind css -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .font-manrope {
+            font-family: "Manrope", serif;
+        }
+
+        /* To remove the scrollbar on large screens */
+        body {
+            overflow-x: hidden;
+        }
+
+        /* Center the carousel images for small and medium screens */
+        .carousel img {
+            object-fit: cover;
+        }
+
+        /* Make sure the carousel images are centered on medium and smaller screens */
+        @media (max-width: 1024px) {
+            .carousel img {
+                width: 100%;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-manrope">
+    <header class="w-full">
+        <nav>
+            <div class="navbar px-4 bg-base-100 flex justify-between items-center bg-[#1f2937]">
+                <div class="border-3 flex items-center">
+                    <img src="./images/logo.png" class="w-20">
+                    <p class="text-2xl font-bold mt-5 text-white">Blood Bank</p>
+                </div>
+
+                <div class="hidden lg:flex border-2">
+                    <ul class="menu menu-horizontal">
+                        <li><a class="text-gray-300">Home</a></li>
+                        <li><a class="text-gray-300">About Us</a></li>
+                        <li><a class="text-gray-300">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="w-56 border-2">
+                    <div class="dropdown">
+                        <label tabindex="0" class="btn btn-ghost pr-10">
+                            <i class="fas fa-user text-white"></i>
+                        </label>
+                        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box w-32 shadow-lg">
+                            <li><a href="#">Login</a></li>
+                            <li><a href="#">Register</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            <li><a class="text-gray-300">Home</a></li>
+                            <li><a class="text-gray-300">About Us</a></li>
+                            <li><a class="text-gray-300">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- banner -->
+        <section class="bg-black">
+            <div class="carousel w-full border-3 border-red-700">
+                <div id="slide1" class="carousel-item relative w-full">
+                    <div class="flex flex-col lg:flex-row justify-between gap-30 lg:px-20">
+                        <div class="flex flex-col justify-center space-y-3 mt-10 md:mt-5 lg:mt-0">
+                            <h2 class="text-white font-bold text-[35px] lg:text-[60px]">Save a Life.<br> Donate Blood</h2>
+                            <p class="text-lg">One pint of blood can save a life</p>
+                            <div class="rounded">
+                                <button class="btn bg-red-700 text-white">Donate</button>
+                            </div>
+                        </div>
+                        <img src="./images/banner-2-removebg-preview.png" class="w-full lg:w-1/2 pr-20 mb-10" />
+                    </div>
+                    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                        <a href="#slide4" class="btn btn-circle">❮</a>
+                        <a href="#slide2" class="btn btn-circle">❯</a>
+                    </div>
+                </div>
+
+                <div id="slide2" class="carousel-item relative w-full">
+                    <div class="flex flex-col lg:flex-row justify-between gap-30 lg:px-20">
+                        <div class="flex flex-col justify-center w-full lg:w-1/2 space-y-3 mt-10 md:mt-5 lg:mt-0">
+                            <h2 class="text-white font-bold text-[35px] lg:text-[40px]">Your blood donation matters. Give Today!</h2>
+                            <p class="text-lg">All types of blood are needed to help patients</p>
+                            <div class="rounded">
+                                <button class="btn bg-red-700 text-white">Donate</button>
+                            </div>
+                        </div>
+                        <img src="./images/banner-4-removebg-preview.png" class="w-full lg:w-1/2 pr-20 mb-10" />
+                    </div>
+                    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                        <a href="#slide1" class="btn btn-circle">❮</a>
+                        <a href="#slide3" class="btn btn-circle">❯</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <main>
+
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+
+</html>
+
+
+
